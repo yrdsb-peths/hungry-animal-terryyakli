@@ -27,7 +27,7 @@ public class Wombat extends Actor
         }
         
         
-        //write code for how to move left and right
+        
         
     }
     public void checkApple(){

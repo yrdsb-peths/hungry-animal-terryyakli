@@ -33,7 +33,7 @@ public class MyWorld extends World
     }
 
     public void spawnApple() {
-            random = Greenfoot.getRandomNumber(2); 
+            random = Greenfoot.getRandomNumber(5); 
             Apple apple = new Apple();
             if(random == 0){
                 addObject(apple, 100, 0);
@@ -41,11 +41,18 @@ public class MyWorld extends World
             if(random == 1){
                 addObject(apple, 200, 0);
             }
-            //write for >500
             if(random == 2){
                 addObject(apple, 500, 0); 
             }
-        
+            if(random == 3){
+                addObject(apple, 750, 0);
+            }
+            if(random == 4){
+                addObject(apple, 900, 0);
+            }
+            if(random == 5){
+                addObject(apple, 1000, 0);
+            }
     }
     
     
