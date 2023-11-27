@@ -36,6 +36,7 @@ public class Wombat extends Actor
             removeTouching(Apple.class);
             MyWorld world = (MyWorld) getWorld();
             world.spawnApple();
+            world.increaseScore();
         }
     }
     //public void checkApple(){

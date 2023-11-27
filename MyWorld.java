@@ -8,8 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    private int random;
-    private int counter = 0; 
+    public int score = 0;
+    Label scoreLabel;
+     
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -21,27 +22,39 @@ public class MyWorld extends World
         Wombat wombat = new Wombat();
         addObject(wombat, 300, 300);
         
+        //create a label
+        Label scoreLabel = new Label(0, 80); 
+        addObject(scoreLabel, 40, 50);
+        
+        //spawns the apple into the world
         spawnApple();
+        
+        
     }
 
+    //End game and say "Game Over"
+    public void gameOver(){
+        Label gameOverLabel = new Label("GAME OVER", 100);
+        addObject(gameOver, 300, 200);
+    }
+    
+    
+    
+    // Increase score by 1 if apple eaten
+    public void increaseScore() {
+        score++;
+        scoreLabel.setValue(score);
+    }
+    
+    
+    
+    
+    
     public void spawnApple() {
-            random = Greenfoot.getRandomNumber(4); 
             Apple apple = new Apple();
-            if(random == 0){
-                addObject(apple, 100, 0);
-            }
-            if(random == 1){
-                addObject(apple, 250, 0);
-            }
-            if(random == 2){
-                addObject(apple, 750, 0); 
-            }
-            if(random == 3){
-                addObject(apple, 1000, 0);
-            }
-            if(random == 4){
-                addObject(apple, 0, 0);
-            }
+            int x = Greenfoot.getRandomNumber(600);
+            int y = 0;
+            addObject(apple, x, y);
     }
     
     

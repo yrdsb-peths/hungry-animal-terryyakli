@@ -23,7 +23,8 @@ public class Apple extends Actor
     }
     public void checkEdge(){
         if(isAtEdge()){
-            getWorld().removeObject(this); 
+            getWorld().removeObject(this);
+            gameOver();
         }
     }
     
