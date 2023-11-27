@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Apple here.
+ * Food for Wombat.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Theresa Li 
+ * @version November 27/23
  */
 public class Apple extends Actor
 {
@@ -20,7 +20,6 @@ public class Apple extends Actor
         
         checkEdge(); 
          
-        //spawnApple(); 
     }
     public void checkEdge(){
         if(isAtEdge()){

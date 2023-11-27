@@ -21,39 +21,29 @@ public class MyWorld extends World
         Wombat wombat = new Wombat();
         addObject(wombat, 300, 300);
         
-    }
-    public void act(){
-        if(counter == 0){
-            spawnApple();
-            counter = 30; 
-        }
-        else{
-            counter--; 
-        }
+        spawnApple();
     }
 
     public void spawnApple() {
-            random = Greenfoot.getRandomNumber(5); 
+            random = Greenfoot.getRandomNumber(4); 
             Apple apple = new Apple();
             if(random == 0){
                 addObject(apple, 100, 0);
             }
             if(random == 1){
-                addObject(apple, 200, 0);
+                addObject(apple, 250, 0);
             }
             if(random == 2){
-                addObject(apple, 500, 0); 
+                addObject(apple, 750, 0); 
             }
             if(random == 3){
-                addObject(apple, 750, 0);
-            }
-            if(random == 4){
-                addObject(apple, 900, 0);
-            }
-            if(random == 5){
                 addObject(apple, 1000, 0);
             }
+            if(random == 4){
+                addObject(apple, 0, 0);
+            }
     }
+    
     
     
 }

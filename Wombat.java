@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Wombat here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Theresa Li 
+ * @version Nov 24/23
  */
 public class Wombat extends Actor
 {
@@ -16,7 +16,9 @@ public class Wombat extends Actor
     {
         // Add your action code here.
         keys(); 
-        checkApple();
+        
+        eat();
+        //checkApple();
     }
     public void keys(){
         if(Greenfoot.isKeyDown("a")){
@@ -25,15 +27,22 @@ public class Wombat extends Actor
         if(Greenfoot.isKeyDown("d")){
             move(5); 
         }
-        
-        
-        
-        
     }
-    public void checkApple(){
-        Apple a = (Apple)getOneIntersectingObject(Apple.class); 
-        if(a != null){
-            getWorld().removeObject(a); 
+    
+    
+    // eats apple and spawns new apple if eaten.
+    public void eat() {
+        if(isTouching(Apple.class)) {
+            removeTouching(Apple.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.spawnApple();
         }
     }
+    //public void checkApple(){
+    //    Apple a = (Apple)getOneIntersectingObject(Apple.class); 
+    //    if(a != null){
+    //        getWorld().removeObject(a); 
+    //    
+    //}
+
 }
