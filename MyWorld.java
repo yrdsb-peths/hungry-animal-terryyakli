@@ -8,56 +8,36 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    public int score = 0;
-    Label scoreLabel;
-     
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    private int score = 0;
+    private Label scoreLabel;
+    
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
-        Wombat wombat = new Wombat();
-        addObject(wombat, 300, 300);
-        
-        //create a label
-        Label scoreLabel = new Label(0, 80); 
-        addObject(scoreLabel, 40, 50);
-        
-        //spawns the apple into the world
+        super(600, 400, 1, false);
+        Wombat elephant = new Wombat();
+        addObject(elephant, 300, 300);
         spawnApple();
         
+        scoreLabel = new Label(0, 70);
+        addObject(scoreLabel, 50, 50);
+
+    }
+    
+    public void onGameOver() {
+        Label gameOverLabel = new Label("Game Over!", 70);
+        addObject(gameOverLabel, getWidth()/2, getHeight()/2);
         
     }
-
-    //End game and say "Game Over"
-    public void gameOver(){
-        Label gameOverLabel = new Label("GAME OVER", 100);
-        addObject(gameOver, 300, 200);
-    }
     
-    
-    
-    // Increase score by 1 if apple eaten
     public void increaseScore() {
-        score++;
+        score = score + 1;
         scoreLabel.setValue(score);
     }
     
-    
-    
-    
-    
     public void spawnApple() {
-            Apple apple = new Apple();
-            int x = Greenfoot.getRandomNumber(600);
-            int y = 0;
-            addObject(apple, x, y);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        Apple apple = new Apple();
+        addObject(apple, x, y);
     }
-    
-    
-    
 }
-
