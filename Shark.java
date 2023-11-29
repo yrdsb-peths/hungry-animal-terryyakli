@@ -1,13 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Wombat here.
+ * Shark eats food. Shark wins.
  * 
  * @author Theresa Li 
- * @version Nov 24/23
+ * @version Nov 29/23
  */
+
 public class Shark extends Actor
 {
+    GreenfootSound sharkEatSound = new GreenfootSound("nomnom.mp3");
+    
+    
+    
     public Shark() {
         GreenfootImage image = getImage();
         image.scale(100,100);
@@ -31,8 +36,9 @@ public class Shark extends Actor
         if (isTouching(Baby.class)){
             removeTouching(Baby.class);
             MyWorld world = (MyWorld) getWorld();
-            world.spawnApple();
+            world.spawnBaby();
             world.increaseScore();
+            sharkEatSound.play();
         }
     }
     
