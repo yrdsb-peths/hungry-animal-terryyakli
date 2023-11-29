@@ -14,8 +14,8 @@ public class MyWorld extends World
     public MyWorld()
     {    
         super(600, 400, 1, false);
-        Wombat elephant = new Wombat();
-        addObject(elephant, 300, 300);
+        Shark shark = new Shark();
+        addObject(shark, 300, 300);
         spawnApple();
         
         scoreLabel = new Label(0, 70);
@@ -37,7 +37,7 @@ public class MyWorld extends World
     public void spawnApple() {
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
-        Apple apple = new Apple();
-        addObject(apple, x, y);
+        Baby baby = new Baby();
+        addObject(baby, x, y);
     }
 }

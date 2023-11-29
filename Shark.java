@@ -6,9 +6,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Theresa Li 
  * @version Nov 24/23
  */
-public class Wombat extends Actor
+public class Shark extends Actor
 {
-    public Wombat() {
+    public Shark() {
         GreenfootImage image = getImage();
         image.scale(100,100);
         setImage(image);
@@ -28,8 +28,8 @@ public class Wombat extends Actor
     
     public void eat() {
         // Eat the apple
-        if (isTouching(Apple.class)){
-            removeTouching(Apple.class);
+        if (isTouching(Baby.class)){
+            removeTouching(Baby.class);
             MyWorld world = (MyWorld) getWorld();
             world.spawnApple();
             world.increaseScore();
