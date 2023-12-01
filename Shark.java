@@ -10,6 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Shark extends Actor
 {
     GreenfootSound sharkEatSound = new GreenfootSound("nomnom.mp3");
+    GreenfootImage idle = new GreenfootImage();
     
     
     
