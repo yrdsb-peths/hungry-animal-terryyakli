@@ -10,15 +10,28 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Shark extends Actor
 {
     GreenfootSound sharkEatSound = new GreenfootSound("nomnom.mp3");
-    GreenfootImage idle = new GreenfootImage();
+    GreenfootImage[] idle = new GreenfootImage[8];
+    // GreenfootImage idle = new GreenfootImage("images/folderName/fileName.png");
     
-    
-    
+    // Constructor
     public Shark() {
-        GreenfootImage image = getImage();
-        image.scale(100,100);
-        setImage(image);
+        //GreenfootImage image = getImage();
+        //image.scale(100,100);
+        
+        for(int i = 0; i < idle.length; i++)
+        {
+            idle[i] = new GreenfootImage("Pictures/Shark/idle" + i + ".png");
+        }
+        setImage(idle[0]);
     }
+    
+    
+    // Animate the shark
+    public void animateShark() {
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
+    }
+    
     
     public void act()
     {
@@ -30,7 +43,11 @@ public class Shark extends Actor
         }
         
         eat();
+        
+        //animate shark
+        animateShark();
     }
+    
     
     public void eat() {
         // Eat the apple
