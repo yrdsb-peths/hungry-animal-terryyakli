@@ -10,19 +10,33 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Shark extends Actor
 {
     GreenfootSound sharkEatSound = new GreenfootSound("nomnom.mp3");
-    GreenfootImage[] idle = new GreenfootImage[8];
+    GreenfootImage[] idleRight = new GreenfootImage[8];
+    GreenfootImage[] idleLeft = new GreenfootImage[8];
+    
     // GreenfootImage idle = new GreenfootImage("images/folderName/fileName.png");
+    
+    // Direction shark is facing
+    String facing = "right";
     
     // Constructor
     public Shark() {
         //GreenfootImage image = getImage();
         //image.scale(100,100);
         
-        for(int i = 0; i < idle.length; i++)
+        for(int i = 0; i < idleRight.length; i++)
         {
-            idle[i] = new GreenfootImage("Pictures/Shark/idle" + i + ".png");
+            idleRight[i] = new GreenfootImage("Pictures/Shark/idle" + i + ".png");
+            idleRight[i].scale(100, 100);
         }
-        setImage(idle[0]);
+        
+        for(int i = 0; i < idleLeft.length; i++) {
+            idleLeft[i] = new GreenfootImage("Pictures/Shark/idle" + i + ".png");
+            
+            idleLeft[i].scale(100, 100);
+        }
+        
+        // Initial shark image
+        setImage(idleRight[0]);
     }
     
     
