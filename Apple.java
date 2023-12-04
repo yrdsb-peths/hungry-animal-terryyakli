@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Theresa Li 
  * @version November 27/23
  */
-public class Baby extends Actor
+public class Apple extends Actor
 {
     public void act()
     {

@@ -1,25 +1,26 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Shark eats food. Shark wins.
+ * Elephant eats food. Elephant wins.
  * 
  * @author Theresa Li 
  * @version Nov 29/23
  */
 
-public class Shark extends Actor
+public class Elephant extends Actor
 {
-    GreenfootSound sharkEatSound = new GreenfootSound("nomnom.mp3");
+    GreenfootSound ElephantEatSound = new GreenfootSound("nomnom.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
     
     // GreenfootImage idle = new GreenfootImage("images/folderName/fileName.png");
     
-    // Direction shark is facing
+    // Direction Elephant is facing
     String facing = "right";
+    SimpleTimer animationTimer = new SimpleTimer();
     
     // Constructor
-    public Shark() {
+    public Elephant() {
         //GreenfootImage image = getImage();
         //image.scale(100,100);
         
@@ -31,46 +32,58 @@ public class Shark extends Actor
         
         for(int i = 0; i < idleLeft.length; i++) {
             idleLeft[i] = new GreenfootImage("Pictures/Shark/idle" + i + ".png");
-            
+            idleLeft[i].mirrorHorizontally();
             idleLeft[i].scale(100, 100);
         }
         
-        // Initial shark image
+        // Initial Elephant image
         setImage(idleRight[0]);
     }
     
     
-    // Animate the shark
-    public void animateShark() {
-        setImage(idle[imageIndex]);
-        imageIndex = (imageIndex + 1) % idle.length;
+    // Animate the Elephant
+    public void animateElephant() {
+        if(facing.equals("right"))
+        {
+            setImage(idleRight[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleRight.length;
+        }
+        else
+        {
+            setImage(idleLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleLeft.length;
+        }
+        
     }
     
     
     public void act()
     {
         if(Greenfoot.isKeyDown("a")){
-            move(-3);    
+            move(-3);
+            facing = "left";
+            
         }
         if(Greenfoot.isKeyDown("d")){
             move(3);
+            facing = "right";
         }
         
         eat();
         
-        //animate shark
-        animateShark();
+        //animate Elephant
+        animateElephant();
     }
     
     
     public void eat() {
         // Eat the apple
-        if (isTouching(Baby.class)){
-            removeTouching(Baby.class);
+        if (isTouching(Apple.class)){
+            removeTouching(Apple.class);
             MyWorld world = (MyWorld) getWorld();
-            world.spawnBaby();
+            world.spawnApple();
             world.increaseScore();
-            sharkEatSound.play();
+            ElephantEatSound.play();
         }
     }
     
