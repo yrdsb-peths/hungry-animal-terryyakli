@@ -36,6 +36,8 @@ public class Elephant extends Actor
             idleLeft[i].scale(100, 100);
         }
         
+        animationTimer.mark();
+        
         // Initial Elephant image
         setImage(idleRight[0]);
     }
@@ -43,6 +45,12 @@ public class Elephant extends Actor
     
     // Animate the Elephant
     public void animateElephant() {
+        if(animationTimer.millisElasped() < 200)
+        {
+            return;
+        }
+        animationTimer.mark();
+        
         if(facing.equals("right"))
         {
             setImage(idleRight[imageIndex]);
