@@ -17,7 +17,7 @@ public class Elephant extends Actor
     
     // Direction Elephant is facing
     String facing = "right";
-    SimpleTimer animationTimer = new SimpleTimer();
+    SimpleTimer animationTimer = new SimpleTimer(); 
     
     // Constructor
     public Elephant() {
@@ -41,8 +41,8 @@ public class Elephant extends Actor
         // Initial Elephant image
         setImage(idleRight[0]);
     }
-    //hi
     
+    int imageIndex = 0;
     // Animate the Elephant
     public void animateElephant() {
         if(animationTimer.millisElasped() < 200)
