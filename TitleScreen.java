@@ -19,6 +19,7 @@ public class TitleScreen extends World
         super(600, 400, 1); 
         
         addObject(titleLabel, getWidth()/2, getHeight()/2);
+        prepare();
     }
     
     // Main world act loop
@@ -30,6 +31,23 @@ public class TitleScreen extends World
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
         }
+    }
+    
+    private void prepare()
+    {
+        Elephant elephant = new Elephant();
+        addObject(elephant,447,117);
+        elephant.setLocation(497,65);
+        Label label = new Label ("Use \u2190 and \u2192 to Move", 40);
+        addObject(label,220,257);
+        label.setLocation(297,243);
+        label.setLocation(305,240);
+        Label label2 = new Label ("Press <space> to Start", 40);
+        addObject(label2,249,331);
+        label2.setLocation(326,319);
+        label.setLocation(328,253);
+        label2.setLocation(295,326);
+        label.setLocation(278,251);
     }
     
 }
