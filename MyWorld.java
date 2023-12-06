@@ -35,7 +35,7 @@ public class MyWorld extends World
     }
     
     public void spawnApple() {
-        int x = Greenfoot.getRandomNumber(600);
+        int x = Greenfoot.getRandomNumber(getWidth());
         int y = 0;
         Apple apple = new Apple();
         addObject(apple, x, y);
