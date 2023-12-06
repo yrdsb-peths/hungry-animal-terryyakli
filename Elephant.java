@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Elephant eats food. Elephant wins.
  * 
  * @author Theresa Li 
- * @version Nov 29/23
+ * @version DEc 5/23
  */
 
 public class Elephant extends Actor
@@ -43,9 +43,12 @@ public class Elephant extends Actor
     }
     
     int imageIndex = 0;
+    // Not sure. int animationTimer = 0;
+    
     // Animate the Elephant
-    public void animateElephant() {
-        if(animationTimer.millisElasped() < 200)
+    public void animateElephant()
+    {
+        if(animationTimer.millisElapsed() < 10)
         {
             return;
         }
@@ -61,25 +64,29 @@ public class Elephant extends Actor
             setImage(idleLeft[imageIndex]);
             imageIndex = (imageIndex + 1) % idleLeft.length;
         }
-        
     }
     
     
+    int speed = 1;
+    
     public void act()
     {
-        if(Greenfoot.isKeyDown("a")){
-            move(-3);
+        // Add your action code here.
+        if(Greenfoot.isKeyDown("left"))
+        {
+            move(-2 - speed);
             facing = "left";
-            
         }
-        if(Greenfoot.isKeyDown("d")){
-            move(3);
+        else if(Greenfoot.isKeyDown("right"))
+        {
+            move(2 + speed);
             facing = "right";
         }
         
+        // Remove app if ele eats it
         eat();
         
-        //animate Elephant
+        //Animate the elephant
         animateElephant();
     }
     
@@ -91,6 +98,7 @@ public class Elephant extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.spawnApple();
             world.increaseScore();
+            speed += 1;
             ElephantEatSound.play();
         }
     }
