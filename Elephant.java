@@ -13,7 +13,7 @@ public class Elephant extends Actor
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
     
-    // GreenfootImage idle = new GreenfootImage("images/folderName/fileName.png");
+    // ^^ GreenfootImage idle = new GreenfootImage("images/folderName/fileName.png");
     
     // Direction Elephant is facing
     String facing = "right";
