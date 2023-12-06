@@ -24,7 +24,7 @@ public class MyWorld extends World
     }
     
     public void onGameOver() {
-        Label gameOverLabel = new Label("Game Over!", 70);
+        Label gameOverLabel = new Label("Game over! :( Try Again :)", 50);
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
         
     }
