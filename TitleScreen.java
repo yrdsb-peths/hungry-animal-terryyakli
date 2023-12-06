@@ -39,7 +39,7 @@ public class TitleScreen extends World
         addObject(elephant,447,117);
         elephant.setLocation(497,65);
         
-        Label label = new Label ("Use a and d to move", 35);
+        Label label = new Label ("Use <a> and <d> to move", 35);
         addObject(label,220,257);
         label.setLocation(297,243);
         label.setLocation(305,240);
