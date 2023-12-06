@@ -47,7 +47,7 @@ public class Elephant extends Actor
     // Animate the Elephant
     public void animateElephant()
     {
-        if(animationTimer.millisElapsed() < 10)
+        if(animationTimer.millisElapsed() < 200)
         {
             return;
         }
