@@ -20,25 +20,24 @@ public class Elephant extends Actor
     SimpleTimer animationTimer = new SimpleTimer(); 
     
     // Constructor
-    public Elephant() {
-        //GreenfootImage image = getImage();
-        //image.scale(100,100);
-        
+    public Elephant()
+    {
         for(int i = 0; i < idleRight.length; i++)
         {
-            idleRight[i] = new GreenfootImage("Pictures/Shark/idle" + i + ".png");
+            idleRight[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
             idleRight[i].scale(100, 100);
         }
         
-        for(int i = 0; i < idleLeft.length; i++) {
-            idleLeft[i] = new GreenfootImage("Pictures/Shark/idle" + i + ".png");
+        for(int i = 0; i < idleLeft.length; i++)
+        {
+            idleLeft[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
             idleLeft[i].mirrorHorizontally();
             idleLeft[i].scale(100, 100);
         }
         
         animationTimer.mark();
         
-        // Initial Elephant image
+        // Initial elephant image
         setImage(idleRight[0]);
     }
     
