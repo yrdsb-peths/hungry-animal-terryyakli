@@ -106,13 +106,13 @@ public class Elephant extends Actor
     
     public void bounding()
     {
-        if(getX()>600)
+        if(getX()>550)
         {
-            setLocation(600, getY());
+            setLocation(550, getY());
         }
-        else if(getX() < 0)
+        else if(getX() < 50)
         {
-            setLocation(0, getY());
+            setLocation(50, getY());
         }
 
     }

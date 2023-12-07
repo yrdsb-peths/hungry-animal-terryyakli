@@ -60,6 +60,7 @@ public class MyWorld extends World
     public void restart()
     {
         isGameOver = false;
+        scoreLabel.setValue(0);
         score = 0;
         spawnApple();
         gameOverLabel.setValue("");
