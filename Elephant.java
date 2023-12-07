@@ -65,19 +65,19 @@ public class Elephant extends Actor
         }
     }
     
-    int speed = 1;
+    int speed = 0;
     
     public void act()
     {
         // Add your action code here.
         if(Greenfoot.isKeyDown("a"))
         {
-            move(-3 - speed);
+            move(-2 - speed);
             facing = "left";
         }
         else if(Greenfoot.isKeyDown("d"))
         {
-            move(3 + speed);
+            move(2 + speed);
             facing = "right";
         }
         

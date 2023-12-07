@@ -20,6 +20,7 @@ public class TitleScreen extends World
         
         addObject(titleLabel, getWidth()/2, getHeight()/2);
         prepare();
+        
     }
     
     // Main world act loop
@@ -35,6 +36,7 @@ public class TitleScreen extends World
     
     private void prepare()
     {
+
         Elephant elephant = new Elephant();
         addObject(elephant,447,117);
         elephant.setLocation(497,65);
@@ -48,6 +50,33 @@ public class TitleScreen extends World
         label.setLocation(328,253);
         label2.setLocation(295,326);
         label.setLocation(278,251);
+        elephant.setLocation(117,98);
+        Apple apple = new Apple();
+        addObject(apple,380,172);
+        apple.setLocation(195,91);
+        Apple apple2 = new Apple();
+        addObject(apple2,436,149);
+        apple2.setLocation(468,124);
+        apple.setLocation(382,123);
+        elephant.setLocation(160,134);
+        Apple apple3 = new Apple();
+        addObject(apple3,323,121);
+        Apple apple4 = new Apple();
+        addObject(apple4,285,151);
+        apple4.setLocation(243,121);
+        apple3.setLocation(309,124);
+        apple.setLocation(385,122);
+        apple3.setLocation(318,120);
+        label.setLocation(350,270);
+        label.setLocation(310,306);
+        label.setLocation(316,280);
+        apple2.setLocation(467,124);
+        apple2.setLocation(585,152);
+        removeObject(apple2);
+        removeObject(apple);
+        removeObject(apple3);
+        apple4.setLocation(243,169);
+        removeObject(apple4);
     }
     
 }
