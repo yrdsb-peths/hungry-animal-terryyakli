@@ -96,7 +96,10 @@ public class Elephant extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.spawnApple();
             world.increaseScore();
-            speed += 1;
+            if(speed < 25)
+            {
+                speed += 1;
+            }
             ElephantEatSound.play();
         }
     }

@@ -48,7 +48,10 @@ public class MyWorld extends World
     
     public void spawnApple() {
         Apple apple = new Apple();
-        apple.setSpeed(level);
+        if(level < 25)
+        {
+            apple.setSpeed(level);
+        }
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(apple, x, y);
