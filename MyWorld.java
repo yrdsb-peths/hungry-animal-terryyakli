@@ -6,9 +6,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     private int score = 0;
+    private boolean isGameOver = false;
     private Label scoreLabel;
     int level = 1;
-    
+    Label gameOverLabel = new Label("Game over! :( Try Again :)", 50);
     public MyWorld()
     {    
         super(600, 400, 1, false);
@@ -19,13 +20,20 @@ public class MyWorld extends World
         addObject(scoreLabel, 50, 50);
         
         spawnApple();
-        
+    }
+    
+    public void act()
+    {
+        if(isGameOver&&Greenfoot.isKeyDown("space"))
+        {
+            restart();
+        }
     }
     
     public void onGameOver() {
-        Label gameOverLabel = new Label("Game over! :( Try Again :)", 50);
+        isGameOver = true;
+        gameOverLabel.setValue("Game over! :( Try Again :)");
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
-        
     }
     
     public void increaseScore() {
@@ -46,5 +54,12 @@ public class MyWorld extends World
         addObject(apple, x, y);
     }
     
+    public void restart()
+    {
+        isGameOver = false;
+        score = 0;
+        spawnApple();
+        gameOverLabel.setValue("");
+    }
     
 }
