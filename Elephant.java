@@ -65,19 +65,19 @@ public class Elephant extends Actor
         }
     }
     
-    
+    int speed = 1;
     
     public void act()
     {
         // Add your action code here.
         if(Greenfoot.isKeyDown("a"))
         {
-            move(-3);
+            move(-3 - speed);
             facing = "left";
         }
         else if(Greenfoot.isKeyDown("d"))
         {
-            move(3);
+            move(3 + speed);
             facing = "right";
         }
         
@@ -90,12 +90,13 @@ public class Elephant extends Actor
     
     
     public void eat() {
-        // Eat the apple
+        // Eat the apple and speed up if eaten
         if (isTouching(Apple.class)){
             removeTouching(Apple.class);
             MyWorld world = (MyWorld) getWorld();
             world.spawnApple();
             world.increaseScore();
+            speed += 1;
             ElephantEatSound.play();
         }
     }

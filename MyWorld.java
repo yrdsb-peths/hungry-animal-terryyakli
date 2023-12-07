@@ -1,15 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 //hi testing making sure this can work!
-/**
- * Write a description of class MyWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+//it does work!!
+
+
 public class MyWorld extends World
 {
     private int score = 0;
     private Label scoreLabel;
+    int level = 1;
     
     public MyWorld()
     {    
@@ -30,7 +28,7 @@ public class MyWorld extends World
     }
     
     public void increaseScore() {
-        score = score + 1;
+        score++;
         scoreLabel.setValue(score);
     }
     
@@ -39,5 +37,6 @@ public class MyWorld extends World
         int y = 0;
         Apple apple = new Apple();
         addObject(apple, x, y);
+        app.setSpeed(level);
     }
 }
