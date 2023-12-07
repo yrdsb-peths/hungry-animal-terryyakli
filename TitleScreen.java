@@ -4,11 +4,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Title screen.
  * 
  * @author Theresa Li 
- * @version December 04/2023
+ * @version December 06/2023
  */
 public class TitleScreen extends World
 {
-    Label titleLabel = new Label("Hungry Elephant", 55);
+    Label titleLabel = new Label("Nomnom Elephant", 55);
     /**
      * Constructor for objects of class TitleScreen.
      * 

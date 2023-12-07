@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Apple extends Actor
 {
-    
+    private int speed = 1;
+
     public Apple()
     {
         GreenfootImage image = getImage();
@@ -24,4 +25,12 @@ public class Apple extends Actor
             world.onGameOver();
         }
     }
+
+    public void setSpeed(int spd) {
+        speed = spd;
+    }
+
+
+
+
 }
