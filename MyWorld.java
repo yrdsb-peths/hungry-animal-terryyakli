@@ -32,15 +32,16 @@ public class MyWorld extends World
         scoreLabel.setValue(score);
 
         if(score % 5 == 0){
-            level+=;
+            level+= 1;
         }
     }
+    
     
     public void spawnApple() {
         int x = Greenfoot.getRandomNumber(getWidth());
         int y = 0;
         Apple apple = new Apple();
         addObject(apple, x, y);
-        app.setSpeed(level);
+        apple.setSpeed(level);
     }
 }
