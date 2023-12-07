@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Apple extends Actor
 {
-    private int speed = 1;
+    int speed = 2;
 
     public Apple()
     {
@@ -17,20 +17,27 @@ public class Apple extends Actor
         setImage(image);
     }
     
+
     public void act()
     {
-        setLocation(getX(), getY() + 2);
+        // Add your action code here.
+        int x = getX();
+        int y = getY() + speed;
+        setLocation(x, y);
+        
+        // Remove apple and draw game over when apple gets to bottom
         MyWorld world = (MyWorld) getWorld();
-        if(getY() > world.getHeight()) {
+        if(getY() >= world.getHeight())
+        {
             world.onGameOver();
+            world.removeObject(this);
         }
     }
-
-    public void setSpeed(int spd) {
+    
+    public void setSpeed(int spd)
+    {
         speed = spd;
     }
-
-
 
 
 }

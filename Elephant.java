@@ -65,7 +65,7 @@ public class Elephant extends Actor
         }
     }
     
-    int speed = 0;
+    int speed = 1;
     
     public void act()
     {
@@ -81,7 +81,7 @@ public class Elephant extends Actor
             facing = "right";
         }
         
-        // Remove app if ele eats it
+        // Remove app if elephant eats it
         eat();
         
         //Animate the elephant
@@ -101,5 +101,5 @@ public class Elephant extends Actor
         }
     }
     
-   
+    
 }
