@@ -70,12 +70,12 @@ public class Elephant extends Actor
     public void act()
     {
         // Add your action code here.
-        if(Greenfoot.isKeyDown("a"))
+        if(Greenfoot.isKeyDown("a")||Greenfoot.isKeyDown("left"))
         {
             move(-2 - speed);
             facing = "left";
         }
-        else if(Greenfoot.isKeyDown("d"))
+        else if(Greenfoot.isKeyDown("d")||Greenfoot.isKeyDown("right"))
         {
             move(2 + speed);
             facing = "right";
@@ -83,7 +83,7 @@ public class Elephant extends Actor
         
         // Remove app if elephant eats it
         eat();
-        
+        bounding();
         //Animate the elephant
         animateElephant();
     }
@@ -96,10 +96,24 @@ public class Elephant extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.spawnApple();
             world.increaseScore();
-            speed += 1;
+            if(speed < 25)
+            {
+                speed += 1;
+            }
             ElephantEatSound.play();
         }
     }
     
-    
+    public void bounding()
+    {
+        if(getX()>550)
+        {
+            setLocation(550, getY());
+        }
+        else if(getX() < 50)
+        {
+            setLocation(50, getY());
+        }
+
+    }
 }
