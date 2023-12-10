@@ -113,6 +113,8 @@ public class Elephant extends Actor
     
     public void bombing() {
         if(isTouching(Bomb.class)) {
+            //Triggers the explosion and explosion animation
+            explode();
             removeTouching(Bomb.class);
             MyWorld world = (MyWorld) getWorld();
             world.act();
@@ -134,4 +136,28 @@ public class Elephant extends Actor
         }
 
     }
+    
+    
+    //Create explosion animation and method
+    public void explode() {
+        
+        GreenfootImage[] explosionImages = new GreenfootImage[8];
+        
+        for (int i = 0; i < explosionImages.length; i++) {
+            explosionImages[i] = new GreenfootImage("images/NoBackground/exp" + i + ".png");
+            explosionImages[i].scale(100, 100);
+        }
+        
+        
+        
+        
+        for (int i = 0; i < explosionImages.length; i++) {
+            setImage(explosionImages[i]);
+            Greenfoot.delay(1);  // Adjust the delay based on your preference
+        }
+        
+        // After the explosion, remove the elephant
+        getWorld().removeObject(this);
+    }    
+    
 }
