@@ -14,7 +14,7 @@ public class Bomb extends Actor
     public Bomb()
     {
         GreenfootImage bomb = new GreenfootImage("bomb.png");
-        bomb.scale(100,100);
+        bomb.scale(50,50);
         setImage(bomb);
     }
     

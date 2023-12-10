@@ -23,12 +23,13 @@ public class MyWorld extends World
         addObject(scoreLabel, 50, 50);
         
         spawnApple();
+        spawnBomb();
     }
     
     public void act()
     {
         //Bomb spawns every few apples
-        if (appleCounter >= 4 && Greenfoot.getRandomNumber(100) < 50) 
+        if(appleCounter % 4 == 0) 
                 {
                     spawnBomb();
                     
@@ -67,6 +68,7 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(apple, x, y);
+        appleCounter++;
     }
     
     
