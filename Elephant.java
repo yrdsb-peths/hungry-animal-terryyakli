@@ -115,6 +115,7 @@ public class Elephant extends Actor
     }
     
     
+    //Keep elephant within the game screen
     public void bounding()
     {
         if(getX()>550)

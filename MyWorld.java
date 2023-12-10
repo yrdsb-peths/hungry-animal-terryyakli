@@ -34,7 +34,7 @@ public class MyWorld extends World
                     spawnBomb();
                     
                     //resets apple counter to 0
-                    appleCounter = 0;
+                    //appleCounter = 0;
                 }
         
         if(isGameOver&&Greenfoot.isKeyDown("space"))
