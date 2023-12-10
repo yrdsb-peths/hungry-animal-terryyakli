@@ -32,7 +32,7 @@ public class Bomb extends Actor
         }
     }
     
-    
+
     public void setSpeed(int spd) {
         speed = spd;
     }
