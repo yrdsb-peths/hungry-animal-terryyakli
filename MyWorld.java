@@ -17,7 +17,7 @@ public class MyWorld extends World
     {    
         super(600, 400, 1, false);
         Elephant elephant = new Elephant();
-        addObject(elephant, 300, 300);
+        addObject(elephant, 300, 350);
         
         scoreLabel = new Label(0, 70);
         addObject(scoreLabel, 50, 50);
@@ -28,15 +28,6 @@ public class MyWorld extends World
     
     public void act()
     {
-        //Bomb spawns every few apples
-        if(appleCounter % 4 == 0) 
-                {
-                    spawnBomb();
-                    
-                    //resets apple counter to 0
-                    //appleCounter = 0;
-                }
-        
         if(isGameOver&&Greenfoot.isKeyDown("space"))
         {
             restart();
@@ -58,7 +49,6 @@ public class MyWorld extends World
         }
     }
     
-    
     public void spawnApple() {
         Apple apple = new Apple();
         if(level < 25)
@@ -69,6 +59,7 @@ public class MyWorld extends World
         int y = 0;
         addObject(apple, x, y);
         appleCounter++;
+        spawnBomb();
     }
     
     
@@ -77,7 +68,11 @@ public class MyWorld extends World
         bomb.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
-        addObject(bomb, x, y);
+        if(appleCounter % 4 == 0)
+        {
+            addObject(bomb, x, y);
+            appleCounter = 0;
+        }
     }
     
     

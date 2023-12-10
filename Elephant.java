@@ -83,7 +83,13 @@ public class Elephant extends Actor
         
         // Remove app if elephant eats it
         eat();
+        
+        //Game over if the elephant touches the bomb
+        bombing();
+        
+        //Keeps elephant within the screen margins
         bounding();
+        
         //Animate the elephant
         animateElephant();
     }
