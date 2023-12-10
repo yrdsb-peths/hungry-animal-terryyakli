@@ -10,14 +10,30 @@ public class Bomb extends Actor
 {
     int speed = 1;
     
+    //constructor
     public Bomb()
     {
         GreenfootImage bomb = new GreenfootImage("bomb.png");
-        
+        bomb.scale(100,100);
+        setImage(bomb);
     }
+    
+    
     public void act()
     {
-        // Add your action code here.
+        int x = getX();
+        int y = getY() + speed;
+        setLocation(x, y);
         
+        MyWorld world = (MyWorld) getWorld();
+        if(getY() >= world.getHeight())
+        {
+            world.removeObject(this);
+        }
+    }
+    
+    
+    public void setSpeed(int spd) {
+        speed = spd;
     }
 }

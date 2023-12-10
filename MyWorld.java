@@ -9,6 +9,9 @@ public class MyWorld extends World
     private boolean isGameOver = false;
     private Label scoreLabel;
     int level = 1;
+    
+    int appleCounter = 0;
+    
     Label gameOverLabel = new Label("Game over! :( Try Again :)", 50);
     public MyWorld()
     {    
@@ -24,6 +27,15 @@ public class MyWorld extends World
     
     public void act()
     {
+        //Bomb spawns every few apples
+        if (appleCounter >= 4 && Greenfoot.getRandomNumber(100) < 50) 
+                {
+                    spawnBomb();
+                    
+                    //resets apple counter to 0
+                    appleCounter = 0;
+                }
+        
         if(isGameOver&&Greenfoot.isKeyDown("space"))
         {
             restart();
@@ -56,6 +68,16 @@ public class MyWorld extends World
         int y = 0;
         addObject(apple, x, y);
     }
+    
+    
+    public void spawnBomb() {
+        Bomb bomb = new Bomb();
+        bomb.setSpeed(level);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(bomb, x, y);
+    }
+    
     
     public void restart()
     {

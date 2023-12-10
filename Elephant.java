@@ -104,6 +104,17 @@ public class Elephant extends Actor
         }
     }
     
+    
+    public void bombing() {
+        if(isTouching(Bomb.class)) {
+            removeTouching(Bomb.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.act();
+            world.onGameOver();
+        }
+    }
+    
+    
     public void bounding()
     {
         if(getX()>550)
