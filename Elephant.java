@@ -12,12 +12,13 @@ public class Elephant extends Actor
     GreenfootSound ElephantEatSound = new GreenfootSound("nomnom.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
-    
-    // ^^ GreenfootImage idle = new GreenfootImage("images/folderName/fileName.png");
-    
+        
     // Direction Elephant is facing
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer(); 
+    
+    int speed = 1;
+    int imageIndex = 0;
     
     // Constructor
     public Elephant()
@@ -41,8 +42,6 @@ public class Elephant extends Actor
         setImage(idleRight[0]);
     }
     
-    int imageIndex = 0;
-    // Not sure. int animationTimer = 0;
     
     // Animate the Elephant
     public void animateElephant()
@@ -65,11 +64,15 @@ public class Elephant extends Actor
         }
     }
     
-    int speed = 1;
     
     public void act()
     {
-        // Add your action code here.
+        move();
+        checkGameOver();
+    }
+    
+    
+    public void move() {
         if(Greenfoot.isKeyDown("a")||Greenfoot.isKeyDown("left"))
         {
             move(-2 - speed);
@@ -113,12 +116,7 @@ public class Elephant extends Actor
     
     public void bombing() {
         if(isTouching(Bomb.class)) {
-            //Triggers the explosion and explosion animation
             explode();
-            removeTouching(Bomb.class);
-            MyWorld world = (MyWorld) getWorld();
-            world.act();
-            world.onGameOver();
         }
     }
     
@@ -140,24 +138,39 @@ public class Elephant extends Actor
     
     //Create explosion animation and method
     public void explode() {
-        
         GreenfootImage[] explosionImages = new GreenfootImage[8];
         
         for (int i = 0; i < explosionImages.length; i++) {
-            explosionImages[i] = new GreenfootImage("images/NoBackground/exp" + i + ".png");
+            explosionImages[i] = new GreenfootImage("images/exp" + i + ".png");
             explosionImages[i].scale(100, 100);
         }
         
-        
-        
-        
         for (int i = 0; i < explosionImages.length; i++) {
             setImage(explosionImages[i]);
-            Greenfoot.delay(1);  // Adjust the delay based on your preference
+            Greenfoot.delay(1);
+            
+            // Create a blank image
+            GreenfootImage blankImage = new GreenfootImage(1, 1); 
+            
+            // Set a blank image to clear the previous frame
+            setImage(blankImage); 
+            Greenfoot.delay(1);
         }
         
-        // After the explosion, remove the elephant
+        // After the explosion, remove the elephant & bomb
         getWorld().removeObject(this);
+
+        removeTouching(Bomb.class);
+
+        //Displays the game over screen
+        checkGameOver();
     }    
     
+    
+    public void checkGameOver() {
+        MyWorld world = (MyWorld) getWorld();
+        if (world.getObjects(Elephant.class).isEmpty()) {
+            world.onGameOver();
+        }
+    }
 }
