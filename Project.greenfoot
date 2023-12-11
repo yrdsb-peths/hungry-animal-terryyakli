@@ -46,6 +46,7 @@ dependency9.to=MyWorld
 dependency9.type=UsesDependency
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 editor.fx.0.height=830
 editor.fx.0.width=1550
 editor.fx.0.x=-7
@@ -56,6 +57,8 @@ package.numTargets=7
 =======
 =======
 >>>>>>> parent of e6ce888 (Made bomb)
+=======
+>>>>>>> parent of e6ce888 (Made bomb)
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
@@ -64,6 +67,9 @@ height=830
 package.numDependencies=11
 package.numTargets=6
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of e6ce888 (Made bomb)
+=======
 >>>>>>> parent of e6ce888 (Made bomb)
 =======
 >>>>>>> parent of e6ce888 (Made bomb)
