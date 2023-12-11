@@ -70,8 +70,11 @@ public class MyWorld extends World
         int y = 0;
         addObject(apple, x, y);
 <<<<<<< HEAD
+<<<<<<< HEAD
         appleCounter++;
         spawnBomb();
+=======
+>>>>>>> parent of 5327303 (Bomb.java debugging)
 =======
 >>>>>>> parent of 5327303 (Bomb.java debugging)
     }
