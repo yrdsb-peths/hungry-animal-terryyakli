@@ -4,7 +4,7 @@ Change this file to show your intended audience what you want them to see.
 
 
 An added feature in this game is the restart and the bomb feature.
-Restart feature:  When the game is over, user is able to press space to restart the game.
+Restart feature:  When the game is over, the user can press space to restart the game.
 Bomb feature:     Avoid falling bombs. They will occur every few apples.
 
 
