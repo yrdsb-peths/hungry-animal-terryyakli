@@ -2,8 +2,12 @@
 This is the README.md file.
 Change this file to show your intended audience what you want them to see.
 
-You can use **Markdown** syntax to format this file to do things like **bold** or *italicize* text.
-[Markdown basics](https://www.markdownguide.org/getting-started/)
+
+An added feature in this game is the restart and the bomb feature.
+Restart feature:  When the game is over, user is able to press space to restart the game.
+Bomb feature:     Avoid falling bombs. They will occur every few apples.
+
+
 
 This particular repository is the starting template for the Hungry Elephant tutorial.
 
