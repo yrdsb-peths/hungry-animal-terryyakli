@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Elephant eats food. Elephant wins.
  * 
  * @author Theresa Li 
- * @version DEc 5/23
+ * @version December 2023
  */
 
 public class Elephant extends Actor

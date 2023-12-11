@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Title screen.
  * 
  * @author Theresa Li 
- * @version December 07/2023
+ * @version December 2023
  */
 public class TitleScreen extends World
 {

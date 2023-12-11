@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Food for Wombat.
  * 
  * @author Theresa Li 
- * @version November 27/23
+ * @version December 2023
  */
 public class Apple extends Actor
 {

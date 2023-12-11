@@ -27,17 +27,10 @@ public class MyWorld extends World
         spawnBomb();
     }
     
-    public void act()
-    {
-        if(isGameOver&&Greenfoot.isKeyDown("space"))
-        {
-            restart();
-        }
-    }
     
     public void onGameOver() {
         isGameOver = true;
-        gameOverLabel.setValue("Game over! :( Press space \nto try again :)");
+        gameOverLabel.setValue("Game over! :( Try again to \nbeat your current score :)");
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
     }
     
@@ -74,16 +67,6 @@ public class MyWorld extends World
             addObject(bomb, x, y);
             appleCounter = 0;
         }
-    }
-    
-    
-    public void restart()
-    {
-        isGameOver = false;
-        scoreLabel.setValue(0);
-        score = 0;
-        spawnApple();
-        gameOverLabel.setValue("");
     }
     
 }
