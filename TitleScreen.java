@@ -34,9 +34,9 @@ public class TitleScreen extends World
         }
     }
     
-    
     private void prepare()
     {
+
         Elephant elephant = new Elephant();
         addObject(elephant,447,117);
         elephant.setLocation(497,65);

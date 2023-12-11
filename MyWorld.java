@@ -23,11 +23,22 @@ public class MyWorld extends World
         addObject(scoreLabel, 50, 50);
         
         spawnApple();
-        spawnBomb();
     }
     
     public void act()
     {
+<<<<<<< HEAD
+=======
+        //Bomb spawns every few apples
+        if (appleCounter >= 4 && Greenfoot.getRandomNumber(100) < 50) 
+                {
+                    spawnBomb();
+                    
+                    //resets apple counter to 0
+                    appleCounter = 0;
+                }
+        
+>>>>>>> parent of 5327303 (Bomb.java debugging)
         if(isGameOver&&Greenfoot.isKeyDown("space"))
         {
             restart();
@@ -58,8 +69,11 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(apple, x, y);
+<<<<<<< HEAD
         appleCounter++;
         spawnBomb();
+=======
+>>>>>>> parent of 5327303 (Bomb.java debugging)
     }
     
     
