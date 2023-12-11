@@ -1,5 +1,6 @@
 #Greenfoot project file
 class.Apple.image=apple-43-1024x1015.png
+class.Bomb.image=bomb.png
 class.MyWorld.image=Growing-an-Apple-Orchard.jpg
 class.TitleScreen.image=apple\ tree\ front.png
 dependency1.from=MyWorld
@@ -17,9 +18,6 @@ dependency12.type=UsesDependency
 dependency13.from=Elephant
 dependency13.to=Bomb
 dependency13.type=UsesDependency
-dependency14.from=Bomb
-dependency14.to=MyWorld
-dependency14.type=UsesDependency
 dependency2.from=MyWorld
 dependency2.to=Elephant
 dependency2.type=UsesDependency
@@ -44,41 +42,13 @@ dependency8.type=UsesDependency
 dependency9.from=Apple
 dependency9.to=MyWorld
 dependency9.type=UsesDependency
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 editor.fx.0.height=830
 editor.fx.0.width=1550
 editor.fx.0.x=-7
 editor.fx.0.y=-7
 height=830
-package.numDependencies=14
+package.numDependencies=13
 package.numTargets=7
-=======
-=======
->>>>>>> parent of e6ce888 (Made bomb)
-=======
->>>>>>> parent of e6ce888 (Made bomb)
-=======
->>>>>>> parent of e6ce888 (Made bomb)
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
-height=830
-package.numDependencies=11
-package.numTargets=6
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of e6ce888 (Made bomb)
-=======
->>>>>>> parent of e6ce888 (Made bomb)
-=======
->>>>>>> parent of e6ce888 (Made bomb)
-=======
->>>>>>> parent of e6ce888 (Made bomb)
 project.charset=windows-1252
 publish.hasSource=false
 publish.locked=true
@@ -122,19 +92,26 @@ target4.width=120
 target4.x=0
 target4.y=0
 target5.height=70
-target5.name=MyWorld
+target5.name=Bomb
 target5.showInterface=false
 target5.type=ClassTarget
 target5.width=120
 target5.x=0
 target5.y=0
 target6.height=70
-target6.name=TitleScreen
+target6.name=MyWorld
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=120
 target6.x=0
 target6.y=0
+target7.height=70
+target7.name=TitleScreen
+target7.showInterface=false
+target7.type=ClassTarget
+target7.width=120
+target7.x=0
+target7.y=0
 version=3.1.0
 width=1550
 world.lastInstantiated=TitleScreen

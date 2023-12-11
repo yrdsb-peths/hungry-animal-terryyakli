@@ -12,6 +12,7 @@ public class MyWorld extends World
     
     int appleCounter = 0;
     
+
     Label gameOverLabel = new Label("Game over! :( Try Again :)", 50);
     public MyWorld()
     {    
@@ -23,22 +24,11 @@ public class MyWorld extends World
         addObject(scoreLabel, 50, 50);
         
         spawnApple();
+        spawnBomb();
     }
     
     public void act()
     {
-<<<<<<< HEAD
-=======
-        //Bomb spawns every few apples
-        if (appleCounter >= 4 && Greenfoot.getRandomNumber(100) < 50) 
-                {
-                    spawnBomb();
-                    
-                    //resets apple counter to 0
-                    appleCounter = 0;
-                }
-        
->>>>>>> parent of 5327303 (Bomb.java debugging)
         if(isGameOver&&Greenfoot.isKeyDown("space"))
         {
             restart();
@@ -47,7 +37,7 @@ public class MyWorld extends World
     
     public void onGameOver() {
         isGameOver = true;
-        gameOverLabel.setValue("Game over! :( Try Again :)");
+        gameOverLabel.setValue("Game over! :( Press space \nto try again :)");
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
     }
     
@@ -69,14 +59,8 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(apple, x, y);
-<<<<<<< HEAD
-<<<<<<< HEAD
         appleCounter++;
         spawnBomb();
-=======
->>>>>>> parent of 5327303 (Bomb.java debugging)
-=======
->>>>>>> parent of 5327303 (Bomb.java debugging)
     }
     
     

@@ -1,39 +1,42 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.GreenfootImage;
 
 /**
- * Bomb will end the game.
+ * Bomb will come radomly and will cause a decrease of HP level
  * 
- * @author Theresa Li 
+ * @author Theresa 
  * @version December 2023
  */
 public class Bomb extends Actor
 {
     int speed = 1;
     
-    //constructor
+    // constructor
     public Bomb()
     {
+        // adjust bomb size
         GreenfootImage bomb = new GreenfootImage("bomb.png");
-        bomb.scale(100,100);
+        bomb.scale(50, 50);
         setImage(bomb);
+        
     }
     
-    
+    /**
+     * Act - do whatever the bomb wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
         int x = getX();
         int y = getY() + speed;
         setLocation(x, y);
         
-        MyWorld world = (MyWorld) getWorld();
-        if(getY() >= world.getHeight())
-        {
-            world.removeObject(this);
-        }
+        // remove the bomb if it hits the ground
+        
     }
     
-
-    public void setSpeed(int spd) {
+    public void setSpeed(int spd)
+    {
         speed = spd;
     }
 }

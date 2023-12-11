@@ -67,33 +67,25 @@ public class Elephant extends Actor
     
     public void act()
     {
-        move();
-        checkGameOver();
-    }
-    
-    
-    public void move() {
-        if(Greenfoot.isKeyDown("a")||Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("left"))
         {
-            move(-2 - speed);
+            move(-speed);
             facing = "left";
         }
-        else if(Greenfoot.isKeyDown("d")||Greenfoot.isKeyDown("right"))
+        else if(Greenfoot.isKeyDown("right"))
         {
-            move(2 + speed);
+            move(speed);
             facing = "right";
         }
         
-        // Remove app if elephant eats it
+        // Remove apple if elephant eats it
         eat();
-        
-        //Game over if the elephant touches the bomb
-        bombing();
-        
-        //Keeps elephant within the screen margins
+    
         bounding();
         
-        //Animate the elephant
+        bombing();
+        
+        // Animate the elephant
         animateElephant();
     }
     
@@ -114,13 +106,6 @@ public class Elephant extends Actor
     }
     
     
-    public void bombing() {
-        if(isTouching(Bomb.class)) {
-            explode();
-        }
-    }
-    
-    
     //Keep elephant within the game screen
     public void bounding()
     {
@@ -136,41 +121,15 @@ public class Elephant extends Actor
     }
     
     
-    //Create explosion animation and method
-    public void explode() {
-        GreenfootImage[] explosionImages = new GreenfootImage[8];
-        
-        for (int i = 0; i < explosionImages.length; i++) {
-            explosionImages[i] = new GreenfootImage("images/exp" + i + ".png");
-            explosionImages[i].scale(100, 100);
-        }
-        
-        for (int i = 0; i < explosionImages.length; i++) {
-            setImage(explosionImages[i]);
-            Greenfoot.delay(1);
-            
-            // Create a blank image
-            GreenfootImage blankImage = new GreenfootImage(1, 1); 
-            
-            // Set a blank image to clear the previous frame
-            setImage(blankImage); 
-            Greenfoot.delay(1);
-        }
-        
-        // After the explosion, remove the elephant & bomb
-        getWorld().removeObject(this);
-
-        removeTouching(Bomb.class);
-
-        //Displays the game over screen
-        checkGameOver();
-    }    
-    
-    
-    public void checkGameOver() {
-        MyWorld world = (MyWorld) getWorld();
-        if (world.getObjects(Elephant.class).isEmpty()) {
+    public void bombing()
+    {
+        if(isTouching(Bomb.class))
+        {
+            removeTouching(Bomb.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.act();
             world.onGameOver();
+            
         }
     }
 }

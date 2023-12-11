@@ -24,6 +24,14 @@ public class Apple extends Actor
         int x = getX();
         int y = getY() + speed;
         setLocation(x, y);
+        if(getX()>550)
+        {
+            setLocation(550, getY());
+        }
+        else if(getX() < 50)
+        {
+            setLocation(50, getY());
+        }
         
         // Remove apple and draw game over when apple gets to bottom
         MyWorld world = (MyWorld) getWorld();
